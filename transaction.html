@@ -516,9 +516,13 @@ amount for the transaction can be changed as long as it is less than the
 original authorized amount.</p>
 <div class="section" id="id1">
 <h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">authorize</span><span class="o">.</span><span class="n">Transaction</span><span class="o">.</span><span class="n">settle</span><span class="p">(</span><span class="s">&#39;89798235&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">authorize</span><span class="o">.</span><span class="n">Transaction</span><span class="o">.</span><span class="n">settle</span><span class="p">({</span>
+    <span class="s">&#39;amount&#39;</span><span class="p">:</span> <span class="mf">40.00</span><span class="p">,</span>
+    <span class="s">&#39;transaction_id&#39;</span><span class="p">:</span> <span class="s">&#39;89798235&#39;</span>
+<span class="p">})</span>
 </pre></div>
 </div>
+<p>The amount is not required if you want to settle the authorized amount.</p>
 </div>
 </div>
 <div class="section" id="refund">

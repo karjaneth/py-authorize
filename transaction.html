@@ -511,18 +511,19 @@ settle the transaction by using the <tt class="docutils literal"><span class="pr
 <div class="section" id="settling">
 <h2>Settling<a class="headerlink" href="#settling" title="Permalink to this headline">¶</a></h2>
 <p>In order to finalize a previously authorized transaction, you must call the
-<tt class="docutils literal"><span class="pre">settle</span></tt> method on the transaction ID. When settling a transaction, the
+<tt class="docutils literal"><span class="pre">settle</span></tt> method with the transaction ID. When settling a transaction, the
 amount for the transaction can be changed as long as it is less than the
 original authorized amount.</p>
 <div class="section" id="id1">
 <h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">authorize</span><span class="o">.</span><span class="n">Transaction</span><span class="o">.</span><span class="n">settle</span><span class="p">({</span>
-    <span class="s">&#39;amount&#39;</span><span class="p">:</span> <span class="mf">40.00</span><span class="p">,</span>
-    <span class="s">&#39;transaction_id&#39;</span><span class="p">:</span> <span class="s">&#39;89798235&#39;</span>
-<span class="p">})</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">authorize</span><span class="o">.</span><span class="n">Transaction</span><span class="o">.</span><span class="n">settle</span><span class="p">(</span><span class="s">&#39;89798235&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The amount is not required if you want to settle the authorized amount.</p>
+<p>The amount is not required if you want to settle the authorized amount. To
+settle a different amount, pass the amout as the second parameter.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">authorize</span><span class="o">.</span><span class="n">Transaction</span><span class="o">.</span><span class="n">settle</span><span class="p">(</span><span class="s">&#39;89798235&#39;</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="refund">
